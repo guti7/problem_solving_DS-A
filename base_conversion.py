@@ -25,13 +25,12 @@ def baseConverter(decimal, base):
         converted.push(0)
         
     while decimal > 0:
-        digit = decimal % base
-        converted.push(digits[digit])
+        converted.push(decimal % base)
         decimal /= base
         
     convertedString = ""
     while not converted.isEmpty():
-        convertedString += converted.pop()
+        convertedString += digits[converted.pop()]
     
     return convertedString
     
